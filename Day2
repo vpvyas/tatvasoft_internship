@@ -1,6 +1,36 @@
+/*sercice.js*/
 var http=require('http');
 http.createServer(function(req,res){
     res.write("this is the first server request");
     res.end()
 }).listen(8080)
+
+/*test.js */
+const http = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, World!\n');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+/*package.json*/
+{
+  "name": "workangular",
+  "version": "1.0.0",
+  "description": "my first app",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
 
